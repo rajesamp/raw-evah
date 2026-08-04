@@ -4,7 +4,7 @@
   "description": "RAW-EVAH — Role-Aware Agent Harness Evaluation (Promptfoo runner)",
   "private": true,
   "dependencies": {
-    "promptfoo": "0.103.4"
+    "promptfoo": "0.121.20"
   },
   "engines": {
     "node": ">=20.0.0"
