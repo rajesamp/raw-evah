@@ -1,5 +1,7 @@
 # RAW-EVAH — Role-Aware Agent Harness Evaluation
 
+[![Eval Suite](https://github.com/rajesamp/raw-evah/actions/workflows/eval.yml/badge.svg)](https://github.com/rajesamp/raw-evah/actions/workflows/eval.yml)
+
 A framework for evaluating multi-agent systems where agents have distinct, constrained roles and must cooperate to achieve a goal.
 
 ## Success Criteria (define before any eval runs)
