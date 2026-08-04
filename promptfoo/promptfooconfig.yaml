@@ -10,10 +10,6 @@
 
 description: "RAW-EVAH — Role-Aware Agent Harness Evaluation"
 
-# --- Prompt template: pass through test case prompt variable ---
-prompts:
-  - "{{prompt}}"
-
 # --- Provider: Custom Python multi-agent simulator ---
 providers:
   - id: "file://multi_agent_provider.py:call_api"
