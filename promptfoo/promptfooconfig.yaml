@@ -16,7 +16,7 @@ prompts:
 
 # --- Provider: Custom Python multi-agent simulator ---
 providers:
-  - id: "file://promptfoo/multi_agent_provider.py:call_api"
+  - id: "file://multi_agent_provider.py:call_api"
     label: "multi_agent"
 
 # --- Test Cases ---

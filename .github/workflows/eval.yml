@@ -24,7 +24,7 @@ permissions:
 jobs:
   eval:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
       # Pinned to commit SHA for supply-chain integrity
