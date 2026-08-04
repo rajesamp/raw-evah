@@ -1,0 +1,10 @@
+# RAW-EVAH Dependencies — pinned versions (use == for reproducible builds)
+# Supply-chain: all packages pinned, SBOM generated via syft
+# Base image: cgr.dev/chainguard/python:latest-dev (Wolfi, pin by digest in production)
+#
+# NOTE: promptfoo is a Node.js tool installed via npm, not pip.
+# See package.json for the pinned promptfoo version.
+
+pyyaml==6.0.2
+deepeval==4.1.5
+pytest==9.1.1

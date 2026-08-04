@@ -1,0 +1,54 @@
+# ============================================================
+# RAW-EVAH Handoff Protocol Template
+# Defines how context flows between agents during cooperation.
+# ============================================================
+
+handoff_id: "researcher_to_planner"
+version: "1.0.0"
+
+from_agent: "researcher_agent"
+to_agent: "planner_agent"
+
+# --- Required fields in every handoff ---
+required_fields:
+  - name: "research_output"
+    type: "object"
+    description: "Structured research findings"
+    validation: "must have 'summary' and 'sources' keys"
+  - name: "confidence_score"
+    type: "float"
+    description: "Confidence in research findings, 0.0–1.0"
+    validation: "0.0 <= value <= 1.0"
+  - name: "source_list"
+    type: "array"
+    description: "List of source URLs referenced"
+    validation: "each entry must be valid https URL"
+
+# --- Forbidden fields (never transit between agents) ---
+forbidden_fields:
+  - "raw_secrets"
+  - "internal_credentials"
+  - "api_keys"
+  - "pii"
+  - "unredacted_logs"
+
+# --- Context isolation rules ---
+context_isolation:
+  share_full_context: false
+  share_only_structured_output: true
+  strip_raw_user_input: true
+  strip_internal_reasoning: true
+
+# --- Validation ---
+validation:
+  pre_handoff_checks:
+    - "all required_fields present"
+    - "no forbidden_fields present"
+    - "confidence_score in valid range"
+    - "source_list entries are valid URLs"
+  post_handoff_acknowledgment:
+    required: true
+    acknowledgment_format:
+      received: true
+      fields_validated: true
+      ready_to_proceed: true

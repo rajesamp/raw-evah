@@ -1,0 +1,17 @@
+{
+  "name": "raw-evah-eval-runner",
+  "version": "1.0.0",
+  "description": "RAW-EVAH — Role-Aware Agent Harness Evaluation (Promptfoo runner)",
+  "private": true,
+  "dependencies": {
+    "promptfoo": "0.103.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "eval": "promptfoo eval -c promptfoo/promptfooconfig.yaml",
+    "view": "promptfoo view",
+    "smoke-test": "python promptfoo/multi_agent_provider.py"
+  }
+}
